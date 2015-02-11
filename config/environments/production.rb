@@ -75,4 +75,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Cb.configure do |config|
+  config.dev_key    = 'WDHN7PJ6FTTWCSQCQP2R'
+  config.time_out   = 5
+  end
 end
