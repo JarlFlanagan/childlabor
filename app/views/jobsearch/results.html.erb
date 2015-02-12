@@ -28,7 +28,7 @@
             <div class="large-10 columns">
               <p>
                 <% @job_results.each do |job_info| %>
-                <%= job_info["JobTitle"] %><br/>
+                    <%= job_info.title %><br/>
                 <% end %>
               </p>
             </div>

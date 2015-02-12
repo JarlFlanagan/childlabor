@@ -13,13 +13,13 @@ class JobsearchController < ApplicationController
   def results
   	  	if @location && @job 
 	  		results = Cb.job.search({ location:@location, jobtitle:@job })
-			response = results.response
-			response_job_search = response["ResponseJobSearch"]
-			errors = response_job_search["Errors"]
-			total_count = response_job_search["TotalCount"]
-			result_data = response_job_search["Results"]
-			real_result_data = result_data["JobSearchResult"]
-			@job_results = real_result_data
+			# response = results.response
+			# response_job_search = response["ResponseJobSearch"]
+			# errors = response_job_search["Errors"]
+			# total_count = response_job_search["TotalCount"]
+			# result_data = response_job_search["Results"]
+			# real_result_data = result_data["JobSearchResult"]
+			@job_results = results.model.jobs
 	  	end 
   end
 
