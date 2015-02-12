@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'jobsearch/location'
+  
+  root 'jobsearch#location'
 
-  get 'jobsearch/job'
+  get 'location' => 'jobsearch#location'
 
-  get 'jobsearch/results'
+  get 'job' => 'jobsearch#job'
+
+  get 'results' => 'jobsearch#results'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
