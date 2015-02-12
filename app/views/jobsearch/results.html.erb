@@ -26,7 +26,11 @@
           <div class="row">
             <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
             <div class="large-10 columns">
-              <p><strong>Job Title</strong> Some job </p>
+              <p>
+                <% @job_results.each do |job_info| %>
+                <%= job_info["JobTitle"] %><br/>
+                <% end %>
+              </p>
             </div>
           </div>
 
