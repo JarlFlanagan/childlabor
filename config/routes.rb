@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root 'jobsearch#location'
+
   get 'jobsearch/location'
 
   get 'jobsearch/job'
