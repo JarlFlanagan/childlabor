@@ -37,9 +37,4 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-  Cb.configure do |config|
-  config.dev_key    = 'WDHN7PJ6FTTWCSQCQP2R'
-  config.time_out   = 5
-  end
 end
