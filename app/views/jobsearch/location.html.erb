@@ -32,25 +32,31 @@
       <div class="row">
      
         <div class="large-4 columns">
-          <div class="panel">
             <p>
-            <a href="job?location=denver"><img class="placeholder" src="<%= image_path ('mountains.jpg') %>" alt="icon placeholder"/></a>
+              <%= link_to(
+                    image_tag('mountains.jpg', class: 'thumbnail-mid'),
+                    job_path(location: 'denver')
+                  )
+              %>
             </p>
-          </div>
         </div>
         <div class="large-4 columns">
-          <div class="panel">
             <p>
-              <a href="job?location=miami"><img class="placeholder" src="<%= image_path ('beach.jpg') %>" alt="icon placeholder"/></a>
+              <%= link_to(
+                    image_tag('beach.jpg'),
+                    job_path(location: 'miami')
+                  )
+              %>
             </p>
-          </div>
         </div>
         <div class="large-4 columns">
-          <div class="panel">
             <p>
-            <a href="job?location=atlanta"><img class="placeholder" src="<%= image_path ('skyline.jpg') %>" alt="icon placeholder"/></a>
+              <%= link_to(
+                    image_tag('city.jpg'),
+                    job_path(location: 'atlanta')
+                  )
+              %>
             </p>
-          </div>
         </div>
      
       </div>

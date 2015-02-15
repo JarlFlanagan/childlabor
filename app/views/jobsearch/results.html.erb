@@ -13,30 +13,23 @@
       </nav> 
        
       <div class="row">
-        
-         
-         
-        <div class="large-12 columns">
-    
-           
-     
-          <hr/>
-     
-           
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-            <div class="large-10 columns">
-              <p>
-                <% @job_results.each do |job_info| %>
-                    <%= job_info.title %><br/>
-                <% end %>
-              </p>
-            </div>
-          </div>
+      <div class="large-12">
+<h1>Pick any job you want!</h1>
 
-        </div>
-     
+<% @job_data[:job_results].each do |job| %>
+  <div class="large-10 columns panel">
+        <p><%= job.title %></p>
+      <p>Where: <%= job.location %></p>
+      <p>Company: <%= job.company_name %></p>
+      <a href="#" data-reveal-id="myModal" class="button">I want this job!</a>
+    </div>
+<% end %>
       </div>
+
+<div id="myModal" class="reveal-modal" data-reveal>
+  <h2>Yay! You got the job!</h2>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
      
      
        
