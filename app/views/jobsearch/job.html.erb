@@ -33,26 +33,40 @@
      
       <div class="row">
      
-        <div class="large-4 columns">
-          <div class="panel">
-            <p>
-            <a href="results?job=doctor"><img class="placeholder" src="<%= image_path ('doctor.jpg') %>" alt="icon placeholder"/></a>
+        <div class="large-3 columns">
+            <p class="circle">
+              <%= link_to(
+      image_tag('doctor.png'),
+      results_path(location: @location, job:'doctor')
+    ) 
+%>
             </p>
-          </div>
         </div>
-        <div class="large-4 columns">
-          <div class="panel">
-            <p>
-              <a href="results?job=mechanic"><img class="placeholder" src="<%= image_path ('mechanic.jpg') %>" alt="icon placeholder"/></a>
-            </p>
-          </div>
+        <div class="large-3 columns">
+            <p class="circle">
+              <%= link_to(
+      image_tag('mechanic.png'),
+      results_path(location: @location, job:'mechanic')
+    ) 
+%>
         </div>
-        <div class="large-4 columns">
-          <div class="panel">
-            <p>
-            <a href="results?job=nurse"><img class="placeholder" src="<%= image_path ('nurse_jpg.jpg') %>" alt="icon placeholder"/></a>
+        <div class="large-3 columns">
+            <p class="circle">
+              <%= link_to(
+      image_tag('teacher.png'),
+      results_path(location: @location, job:'teacher')
+    ) 
+%>
             </p>
-          </div>
+        </div>
+        <div class="large-3 columns">
+            <p class="circle">
+              <%= link_to(
+      image_tag('architect.png'),
+      results_path(location: @location, job:'construction')
+    ) 
+%>
+            </p>
         </div>
      
       </div>

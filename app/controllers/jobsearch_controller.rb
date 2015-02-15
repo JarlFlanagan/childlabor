@@ -2,43 +2,32 @@ class JobsearchController < ApplicationController
   before_action :set_job
   before_action :set_location 
 
-  def location
-
+  def job_options
+   @location = params[:location]
   end
 
-  def job
-
+  def location_options
+    @job = params[:job]
   end
 
   def results
-  	  	if @location && @job 
-	  		results = Cb.job.search({ location:@location, jobtitle:@job })
-			# response = results.response
-			# response_job_search = response["ResponseJobSearch"]
-			# errors = response_job_search["Errors"]
-			# total_count = response_job_search["TotalCount"]
-			# result_data = response_job_search["Results"]
-			# real_result_data = result_data["JobSearchResult"]
-			@job_results = results.model.jobs
+
+    Cb.configure do |config|
+    config.dev_key    = 'WDHN1FK6GYPSXRKTGV6C'
+    config.time_out   = 5
+    end
+
+    job = params[:job]
+    location = params[:location]
+
+    results = Cb.job.search({ location: location,
+                              keywords: job })
+    jobs = results.model.jobs
+    @job_data = {
+      job: job,
+      location: location,
+      job_results: jobs
+    }
 	  	end 
   end
 
-  private 
-  def set_job
-  	@job = params[:job]
-    if @job
-      session[:job] = @job
-    else
-      @job = session[:job]
-    end  
-  end
-
-  def set_location
-  	@location = params[:location]
-    if @location
-      session[:location] = @location
-    else
-      @location = session[:location]
-    end
-  end
-end
