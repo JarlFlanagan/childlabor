@@ -1,6 +1,6 @@
 class JobsearchController < ApplicationController
-  before_action :set_job
-  before_action :set_location 
+  # before_action :set_job
+  # before_action :set_location 
 
   def job_options
    @location = params[:location]
